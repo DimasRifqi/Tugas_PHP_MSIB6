@@ -15,7 +15,7 @@
     <div class="container flex justify-center items-center h-screen">
         <div
             class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mr-5">
-            <form class="space-y-6" action="pembayaran.php" method="POST">
+            <form class="space-y-6" action="Tugas_2_Pembayaran.php" method="POST">
                 <h5 class="text-xl font-medium text-gray-900 dark:text-white text-center">Form Belanja</h5>
                 <div>
                     <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
