@@ -2,7 +2,7 @@
 
     $DaftarJudul = ['No', 'Nama', 'NIM', 'Nilai', 'Keterangan', 'Grade', 'Predikat', 'Action'];
 
-    $SiswaA1 = ['Foto'=>'img/laki.jpeg','Nama Mahasiswa'=>'Robin', 'NIM'=>'7577', 'Nilai'=>80];
+    $SiswaA1 = ['Foto'=>'img/laki.jpeg','Nama Mahasiswa'=>'Rudi', 'NIM'=>'7577', 'Nilai'=>80];
     $SiswaA2 = ['Foto'=>'img/perempuan.jpeg','Nama Mahasiswa'=>'Syeila', 'NIM'=>'8597', 'Nilai'=>88];
     $SiswaA3 = ['Foto'=>'img/laki.jpeg','Nama Mahasiswa'=>'Arthur', 'NIM'=>'2277', 'Nilai'=>83];
     $SiswaA4 = ['Foto'=>'img/laki.jpeg','Nama Mahasiswa'=>'Gideon', 'NIM'=>'3689', 'Nilai'=>57];
@@ -114,9 +114,9 @@
                             d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                     </svg>
                 </div>
-                <input type="text" id="table-search-users"
+                <input type="text" id="table-search"
                     class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Search for users">
+                    placeholder="masukkan nama untuk mencari">
             </div>
         </div>
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -346,6 +346,26 @@
             </div>
         </div>
     </div>
+    <script>
+    const searchInput = document.getElementById('table-search');
+    const rows = document.querySelectorAll('tbody tr');
+
+    searchInput.addEventListener('input', function(event) {
+        const searchTerm = event.target.value.toLowerCase();
+
+        rows.forEach(row => {
+            const nameColumn = row.querySelector('th[scope="row"] .font-semibold').textContent
+                .toLowerCase();
+
+            if (nameColumn.includes(searchTerm)) {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+    </script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
